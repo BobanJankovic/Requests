@@ -1,0 +1,25 @@
+Authorizing requests with OAuth 2.0
+
+Requests to the Google URL Shortener API for non-public user data must be authorized by an authenticated user.
+
+The details of the authorization process, or "flow," for OAuth 2.0 vary somewhat depending on what kind of application you're writing. 
+The following general process applies to all application types:
+
+When you create your application, you register it using the Google API Console. 
+Google then provides information you'll need later, such as a client ID and a client secret.
+Activate the Google URL Shortener API in the Google API Console. (If the API isn't listed in the API Console, 
+then skip this step.)
+When your application needs access to user data, it asks Google for a particular scope of access.
+Google displays a consent screen to the user, asking them to authorize your application to request some of their data.
+If the user approves, then Google gives your application a short-lived access token.
+Your application requests user data, attaching the access token to the request.
+If Google determines that your request and the token are valid, it returns the requested data.
+Some flows include additional steps, such as using refresh tokens to acquire new access tokens. 
+For detailed information about flows for various types of applications, see Google's OAuth 2.0 documentation.
+
+Here's the OAuth 2.0 scope information for the Google URL Shortener API:
+
+https://www.googleapis.com/auth/urlshortener
+To request access using OAuth 2.0, your application needs the scope information, 
+as well as information that Google supplies when you register your application 
+(such as the client ID and the client secret).
